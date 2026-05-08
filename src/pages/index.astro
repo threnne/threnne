@@ -1,0 +1,58 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Threnne — independent romance publishing and tools">
+  <main class="mx-auto max-w-3xl px-6 py-24">
+    <header class="mb-16">
+      <h1 class="font-display text-5xl font-bold tracking-tight">Threnne</h1>
+      <p class="mt-4 font-editorial text-2xl italic text-[var(--editorial)]">
+        Independent romance publishing and tools.
+      </p>
+    </header>
+
+    <section class="prose prose-lg max-w-none">
+      <p class="text-[var(--muted)] text-lg leading-relaxed">
+        Threnne is a small, founder-led company building resources for the people who write,
+        edit, and adapt romance. We start with data and editorial. Books and production come
+        later.
+      </p>
+    </section>
+
+    <section class="mt-16">
+      <h2 class="font-display text-sm uppercase tracking-[0.2em] text-[var(--muted)]">
+        What we're building
+      </h2>
+      <ul class="mt-6 space-y-6">
+        <li class="border-t border-[var(--border)] pt-6">
+          <a
+            href="https://romancesignal.com"
+            class="group flex items-baseline justify-between gap-6"
+          >
+            <div>
+              <h3 class="font-display text-2xl font-semibold group-hover:text-[var(--accent)]">
+                Romance Signal
+              </h3>
+              <p class="mt-1 text-[var(--muted)]">
+                A subscription analytics product for indie romance authors, editors, and
+                adaptation scouts. Sub-trope-level demand signals from nine public sources.
+              </p>
+            </div>
+            <span class="font-mono text-xs uppercase tracking-wider text-[var(--accent-2)]">
+              Alpha →
+            </span>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <footer class="mt-32 border-t border-[var(--border)] pt-8 text-sm text-[var(--muted)]">
+      <p>Threnne LLC · Texas · 2026</p>
+      <p class="mt-1">
+        <a href="mailto:hello@threnne.com" class="underline-offset-4 hover:underline">
+          hello@threnne.com
+        </a>
+      </p>
+    </footer>
+  </main>
+</BaseLayout>

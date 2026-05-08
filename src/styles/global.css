@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Bouquet design tokens — keep in sync with romance-signal */
+:root {
+  --bg: #faf6f1;
+  --surface: #fff;
+  --text: #2b1f24;
+  --muted: #6b5860;
+  --border: #e8dfd9;
+  --accent: #a8344f;
+  --accent-2: #5a6f94;
+  --editorial: #8a5c86;
+}
+
+[data-theme='dark'] {
+  --bg: #1a1419;
+  --surface: #2c2129;
+  --text: #f4ecec;
+  --muted: #a39199;
+  --border: #3a2d35;
+  --accent: #d14a6a;
+  --accent-2: #8a9dc1;
+  --editorial: #b083ac;
+}
+
+html {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+/* Editorial italic for emphasis */
+em,
+.italic-display {
+  font-family: 'Spectral', Georgia, serif;
+  font-style: italic;
+  color: var(--editorial);
+}
