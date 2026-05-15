@@ -41,7 +41,13 @@ Output goes to `dist/`.
 
 ## Deploy
 
-Connected to Netlify. Pushing to `main` triggers a deploy. Branch previews available on PRs.
+Connected to Netlify.
+
+- `main` -> [threnne.com](https://threnne.com) (production)
+- `staging` -> [staging.threnne.com](https://staging.threnne.com) (QA)
+- Pull requests get their own deploy preview URL
+
+Workflow: build and QA on `staging`, then merge to `main` to promote.
 
 ## License
 
