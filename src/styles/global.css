@@ -76,8 +76,7 @@ input:focus-visible { outline: 2px solid var(--acid); outline-offset: 3px; borde
   border-bottom: 1px solid var(--offwhite-rule);
 }
 .chrome__inner {
-  max-width: var(--max);
-  margin: 0 auto;
+  width: 100%;
   padding: 14px var(--gutter);
   display: flex; align-items: center; justify-content: space-between;
   gap: 32px;
