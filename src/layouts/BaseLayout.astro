@@ -6,29 +6,32 @@ interface Props {
   description?: string;
 }
 
-const { title, description = 'Threnne — independent romance publishing and tools.' } = Astro.props;
+const {
+  title,
+  description = 'Threnne is a small operation paying close attention to romance. The readers, the writers, the trope ecosystem, and the data underneath all of it.',
+} = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en" data-theme="light">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link
-      rel="preconnect"
-      href="https://api.fontshare.com"
-      crossorigin
-    />
+
+    <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
     <link
       rel="stylesheet"
-      href="https://api.fontshare.com/v2/css?f[]=satoshi@700,500,400&f[]=spectral@400i&display=swap"
+      href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&f[]=general-sans@400,500,600&f[]=boska@500,500i&display=swap"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap"
     />
+
     <title>{title}</title>
   </head>
   <body>

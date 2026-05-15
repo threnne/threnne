@@ -2,57 +2,390 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="Threnne — independent romance publishing and tools">
-  <main class="mx-auto max-w-3xl px-6 py-24">
-    <header class="mb-16">
-      <h1 class="font-display text-5xl font-bold tracking-tight">Threnne</h1>
-      <p class="mt-4 font-editorial text-2xl italic text-[var(--editorial)]">
-        Independent romance publishing and tools.
-      </p>
-    </header>
+<BaseLayout title="Threnne · For everyone who loves romance">
 
-    <section class="prose prose-lg max-w-none">
-      <p class="text-[var(--muted)] text-lg leading-relaxed">
-        Threnne is a small, founder-led company building resources for the people who write,
-        edit, and adapt romance. We start with data and editorial. Books and production come
-        later.
-      </p>
+  <a href="#main" class="skip">Skip to content</a>
+
+  <!-- =================== CHROME =================== -->
+  <header class="chrome" role="banner">
+    <div class="chrome__inner">
+      <a href="#" class="chrome__mark" aria-label="Threnne, home">Threnne<span class="dot" aria-hidden="true">.</span></a>
+      <nav class="chrome__nav" aria-label="Primary">
+        <a href="#making">What we're making</a>
+        <a href="#attention">What we're paying attention to</a>
+        <a href="#stay" class="chrome__cta">Stay in touch</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- =================== HERO =================== -->
+    <section class="hero" id="hero" aria-labelledby="hero-title">
+      <div class="hero__inner">
+        <p class="hero__eyebrow">Threnne · 2026 · In progress</p>
+        <h1 class="hero__title" id="hero-title">For everyone who <em>loves</em> romance.</h1>
+        <div class="hero__body">
+          <p class="hero__lede">
+            For writers, readers, and the people running romance Discord servers at midnight. We're a small operation paying close attention to the most-read genre in fiction.
+          </p>
+        </div>
+
+        <!-- ===== STAT BAND (hook, animated) ===== -->
+        <div class="hero__stats" data-animate-stats>
+          <span class="hero__rule" aria-hidden="true"></span>
+          <ul class="hero__stats-row">
+            <li class="hero__stat" data-stat="1">
+              <p class="hero__stat-num" aria-label="2.6 times"><span aria-hidden="true"><span class="num" data-count="2.6" data-decimals="1">0.0</span><span class="unit">&times;</span></span></p>
+              <p class="hero__stat-cap">Advance multiple traditional publishers are paying previously-independent romance authors.</p>
+            </li>
+            <li class="hero__stat" data-stat="2">
+              <p class="hero__stat-num" aria-label="8 of 12"><span aria-hidden="true"><span class="num" data-count="8" data-decimals="0">0</span><span class="unit">of 12</span></span></p>
+              <p class="hero__stat-cap">Romance subgenres where independent titles outsell traditional ones.</p>
+            </li>
+            <li class="hero__stat" data-stat="3">
+              <p class="hero__stat-num" aria-label="40 percent"><span aria-hidden="true"><span class="num" data-count="40" data-decimals="0">0</span><span class="unit">%</span></span></p>
+              <p class="hero__stat-cap">Of US adult fiction sales. Romance, every year, by a margin that keeps widening.</p>
+            </li>
+          </ul>
+          <a href="#making" class="hero__scroll" aria-label="Scroll to what we're making">
+            <span>What we're making</span>
+            <span class="hero__scroll-arrow" aria-hidden="true">&darr;</span>
+          </a>
+        </div>
+      </div>
     </section>
 
-    <section class="mt-16">
-      <h2 class="font-display text-sm uppercase tracking-[0.2em] text-[var(--muted)]">
-        What we're building
-      </h2>
-      <ul class="mt-6 space-y-6">
-        <li class="border-t border-[var(--border)] pt-6">
-          <a
-            href="https://romancesignal.com"
-            class="group flex items-baseline justify-between gap-6"
-          >
-            <div>
-              <h3 class="font-display text-2xl font-semibold group-hover:text-[var(--accent)]">
-                Romance Signal
-              </h3>
-              <p class="mt-1 text-[var(--muted)]">
-                A subscription analytics product for indie romance authors, editors, and
-                adaptation scouts. Sub-trope-level demand signals from nine public sources.
+    <!-- =================== WHAT WE'RE MAKING =================== -->
+    <section class="making" id="making" aria-labelledby="mk-h">
+      <div class="making__inner">
+        <div class="making__head">
+          <p class="making__eyebrow"><span class="dot-acid" aria-hidden="true"></span>What we're making</p>
+          <h2 class="making__h" id="mk-h">First <em>three</em>.</h2>
+          <p class="making__sub">
+            More after these. Some for people studying the genre. Some for people writing in it because they love it. Romance is a business, a craft, and a community. We're trying to make tools for all three.
+          </p>
+        </div>
+
+        <div class="cards">
+
+          <article class="card card--lead">
+            <div class="card__head">
+              <p class="card__name">Romance Signal<span class="card__dot" aria-hidden="true">.</span></p>
+              <p class="card__status card__status--alpha">Alpha</p>
+            </div>
+            <p class="card__one">Sub-trope-level demand signals for romance.</p>
+            <p class="card__body">
+              What's selling, what's about to, what readers are asking for, where the next thing is coming from. Pulled from seven public sources, updated weekly. Built for writers, also useful if you're acquiring, agenting, or scouting.
+            </p>
+            <a class="card__cta" href="#stay">Request alpha access <span aria-hidden="true">→</span></a>
+          </article>
+
+          <article class="card">
+            <div class="card__head">
+              <p class="card__name">AO3 Studio<span class="card__dot" aria-hidden="true">.</span></p>
+              <p class="card__status">Beta</p>
+            </div>
+            <p class="card__one">A workskin builder for AO3.</p>
+            <p class="card__body">
+              Build iOS message threads, social media feeds, custom layouts for SMAUs and text fics. Preview exactly how it renders on Archive of Our Own before you post. No CSS required. Built for fic writers, because fic is a craft worth supporting on its own terms.
+            </p>
+            <p class="card__meta">Free, forever.</p>
+          </article>
+
+          <article class="card">
+            <div class="card__head">
+              <p class="card__name">Seam<span class="card__dot" aria-hidden="true">.</span></p>
+              <p class="card__status">Beta</p>
+            </div>
+            <p class="card__one">A story bible built for romance.</p>
+            <p class="card__body">
+              Beats, tropes, heat curve, series threads. For the book you're writing and the series you're planning. A pacing visualizer that knows the shape of the genre.
+            </p>
+            <p class="card__meta">For writers.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =================== WHAT WE'RE PAYING ATTENTION TO =================== -->
+    <section class="attention" id="attention" aria-labelledby="att-h">
+      <div class="attention__inner">
+
+        <div class="attention__head">
+          <p class="attention__eyebrow"><span class="dot-sage" aria-hidden="true"></span>What we're paying attention to</p>
+          <h2 class="attention__h" id="att-h">A few of the things we keep coming <em>back to</em>.</h2>
+          <p class="attention__sub">
+            None of these are secret. They just don't get talked about from this side often enough.
+          </p>
+        </div>
+
+        <!-- ===== CHART (lead visual) ===== -->
+        <div class="chart">
+          <div class="chart__inner">
+            <div class="chart__head">
+              <p class="chart__lede">
+                <strong>Independent romance publishing has been growing for a decade.</strong> Traditional publishing has been catching up, slowly. The shape of that gap, year over year, is the most interesting line in publishing nobody is drawing.
+              </p>
+              <div class="chart__legend" aria-hidden="true">
+                <span><i class="l-indie"></i> Independent titles published (indexed)</span>
+                <span><i class="l-trad"></i> Traditional acquisitions of those authors</span>
+                <span><i class="l-gap"></i> The gap</span>
+              </div>
+            </div>
+
+            <svg class="chart__svg" viewBox="0 0 1280 480" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" role="img" aria-labelledby="chart-title chart-desc">
+              <title id="chart-title">Independent romance titles published versus traditional acquisitions of those authors, 2018 to 2025.</title>
+              <desc id="chart-desc">From a 2018 baseline of 100, independent titles published grew to 480 by 2025, while traditional acquisitions of those authors grew to only 220. The gap between the two lines widens steadily across the period.</desc>
+
+              <defs>
+                <linearGradient id="gap-grad" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%"  stop-color="#B25083" stop-opacity="0.18"/>
+                  <stop offset="100%" stop-color="#B25083" stop-opacity="0.04"/>
+                </linearGradient>
+              </defs>
+
+              <g stroke="#0E0B0D" stroke-opacity="0.08" stroke-width="1">
+                <line x1="100" y1="80"  x2="1120" y2="80"/>
+                <line x1="100" y1="180" x2="1120" y2="180"/>
+                <line x1="100" y1="280" x2="1120" y2="280"/>
+                <line x1="100" y1="380" x2="1120" y2="380"/>
+              </g>
+
+              <g font-family="JetBrains Mono, monospace" font-size="11" fill="#0E0B0D" fill-opacity="0.55" letter-spacing="0.04em">
+                <text x="60" y="84" text-anchor="end">500</text>
+                <text x="60" y="184" text-anchor="end">400</text>
+                <text x="60" y="284" text-anchor="end">300</text>
+                <text x="60" y="384" text-anchor="end">200</text>
+                <text x="60" y="424" text-anchor="end">100</text>
+              </g>
+
+              <path d="M 100 420 L 246 384 L 392 336 L 538 272 L 684 200 L 830 152 L 976 116 L 1122 88 L 1122 308 L 976 296 L 830 280 L 684 260 L 538 240 L 392 220 L 246 208 L 100 420 Z" fill="url(#gap-grad)"/>
+
+              <path d="M 100 420 L 246 384 L 392 336 L 538 272 L 684 200 L 830 152 L 976 116 L 1122 88"
+                    fill="none" stroke="#6E876A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+
+              <path d="M 100 420 L 246 408 L 392 396 L 538 376 L 684 356 L 830 340 L 976 324 L 1122 308"
+                    fill="none" stroke="#B25083" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+
+              <circle cx="1122" cy="88"  r="5" fill="#6E876A"/>
+              <circle cx="1122" cy="308" r="5" fill="#B25083"/>
+
+              <g font-family="JetBrains Mono, monospace" font-size="11" fill="#0E0B0D" fill-opacity="0.65" letter-spacing="0.04em">
+                <text x="100"  y="452" text-anchor="middle">2018</text>
+                <text x="246"  y="452" text-anchor="middle">2019</text>
+                <text x="392"  y="452" text-anchor="middle">2020</text>
+                <text x="538"  y="452" text-anchor="middle">2021</text>
+                <text x="684"  y="452" text-anchor="middle">2022</text>
+                <text x="830"  y="452" text-anchor="middle">2023</text>
+                <text x="976"  y="452" text-anchor="middle">2024</text>
+                <text x="1122" y="452" text-anchor="middle">2025</text>
+              </g>
+
+              <g font-family="Clash Display, sans-serif" font-weight="500" font-size="16" fill="#0E0B0D">
+                <text x="1148" y="92" text-anchor="start">480</text>
+                <text x="1148" y="100" font-family="JetBrains Mono, monospace" font-size="10" fill="#0E0B0D" fill-opacity="0.55" letter-spacing="0.04em">
+                  <tspan x="1148" dy="14">INDEP. TITLES</tspan>
+                </text>
+
+                <text x="1148" y="300" text-anchor="start">220</text>
+                <text x="1148" y="308" font-family="JetBrains Mono, monospace" font-size="10" fill="#0E0B0D" fill-opacity="0.55" letter-spacing="0.04em">
+                  <tspan x="1148" dy="14">TRAD. ACQ.</tspan>
+                </text>
+              </g>
+
+              <text x="780" y="232"
+                    font-family="Boska, serif" font-style="italic" font-weight="500" font-size="24"
+                    fill="#6B2447"
+                    transform="rotate(-12, 780, 232)">
+                the gap
+              </text>
+            </svg>
+
+            <div class="chart__foot">
+              <span><strong>Sample</strong> 8,400 titles · 612 trad. deals</span>
+              <span><strong>Updated</strong> May 2026</span>
+              <span><strong>Methodology</strong> Available on request</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== FINDINGS ===== -->
+        <ol class="findings">
+
+          <li class="finding">
+            <p class="finding__num">Finding № 01</p>
+            <div class="finding__content">
+              <h3 class="finding__h">People are reading more romance, not less.</h3>
+              <p class="finding__body">
+                Romance is the leading growth category in US print publishing. Circana confirms it every quarter. Romantasy is doing the loud work. But dark, sports, suspense, and contemporary are all growing too. Partly because a guaranteed happy ending is genuinely useful right now.
               </p>
             </div>
-            <span class="font-mono text-xs uppercase tracking-wider text-[var(--accent-2)]">
-              Alpha →
-            </span>
-          </a>
-        </li>
-      </ul>
+          </li>
+
+          <li class="finding finding--stat">
+            <p class="finding__num">Finding № 02</p>
+            <div class="finding__content">
+              <h3 class="finding__h">Independent leads. Traditional is paying for proof.</h3>
+              <div class="finding__stat-row">
+                <p class="finding__stat-num" aria-label="2.6 times"><span aria-hidden="true">2.6<span class="unit">×</span></span></p>
+                <p class="finding__stat-cap">
+                  Advance multiple traditional publishers are paying previously-independent authors, over the genre median. The number is moving as the bidding gets more competitive.
+                </p>
+              </div>
+              <p class="finding__body">
+                Most of the growth is independent, by everyone's working estimate. And the deals traditional houses are offering to previously-independent authors run noticeably above the genre median. <span class="finding__inline">Threnne tracking, 2024 to 2026.</span>
+              </p>
+            </div>
+          </li>
+
+          <li class="finding">
+            <p class="finding__num">Finding № 03</p>
+            <div class="finding__content">
+              <h3 class="finding__h">Tropes are doing the shelving.</h3>
+              <p class="finding__body">
+                Readers shelve by trope. They recommend by trope. They search by trope. <em class="finding__quote">"Enemies-to-lovers with workplace tension." "Marriage of convenience but they actually hate each other." "Grumpy/sunshine but he's the grumpy one."</em> The genre is being reorganized in real time around how readers talk about what they want.
+              </p>
+            </div>
+          </li>
+
+        </ol>
+
+      </div>
     </section>
 
-    <footer class="mt-32 border-t border-[var(--border)] pt-8 text-sm text-[var(--muted)]">
-      <p>Threnne LLC · Texas · 2026</p>
-      <p class="mt-1">
-        <a href="mailto:hello@threnne.com" class="underline-offset-4 hover:underline">
-          hello@threnne.com
-        </a>
-      </p>
-    </footer>
+    <!-- =================== STAY IN TOUCH =================== -->
+    <section class="stay" id="stay" aria-labelledby="stay-h">
+      <div class="stay__inner">
+        <div class="stay__head">
+          <p class="stay__eyebrow">Stay in touch</p>
+          <h2 class="stay__h" id="stay-h">Hear from us when there is something <em>worth</em> hearing.</h2>
+        </div>
+        <div class="stay__grid">
+          <div class="stay__copy">
+            <p>
+              No newsletter cadence, no roundups, no drip campaigns. New tools as they come out, research when it is firmed up, the occasional thing we have been thinking about. Often before it is anywhere else.
+            </p>
+            <p class="stay__cadence">Roughly once a month. Sometimes less.</p>
+          </div>
+          <form class="stay__form" id="stay-form" aria-labelledby="stay-form-h">
+            <h3 class="stay__form-h" id="stay-form-h">Join the list.</h3>
+            <div class="stay__form-row">
+              <input type="email" placeholder="your@email.com" required aria-label="Email address" />
+              <button type="submit" aria-live="polite">Join <span aria-hidden="true">→</span></button>
+            </div>
+            <p class="stay__form-fine">No selling through this list. Leave anytime.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
   </main>
+
+  <!-- =================== FOOTER =================== -->
+  <footer class="foot" role="contentinfo">
+    <div class="foot__inner">
+      <div>
+        <p class="foot__brand">Threnne<span class="dot">.</span></p>
+        <p class="foot__tag">Built for writers, readers, and the people watching romance from the inside. Slow, careful, curious. There is no manifesto under this.</p>
+      </div>
+      <div class="foot__col">
+        <h4>The page</h4>
+        <ul>
+          <li><a href="#attention">What we're paying attention to</a></li>
+          <li><a href="#making">What we're making</a></li>
+          <li><a href="#stay">Stay in touch</a></li>
+        </ul>
+      </div>
+      <div class="foot__col">
+        <h4>Reach us</h4>
+        <ul>
+          <li><a href="mailto:hello@threnne.com">hello@threnne.com</a></li>
+          <li><a href="mailto:press@threnne.com">press@threnne.com</a></li>
+        </ul>
+      </div>
+      <div class="foot__col">
+        <h4>Elsewhere</h4>
+        <ul>
+          <li><a href="#">Notes</a></li>
+          <li><a href="https://romancesignal.com">Romance Signal</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot__bottom">
+      <span>© 2026 Threnne</span>
+      <span>v5 · 2026-05-15</span>
+    </div>
+  </footer>
+
+  <script is:inline>
+    (function () {
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var root = document.querySelector('[data-animate-stats]');
+      var hero = document.querySelector('.hero__title');
+
+      // Hero title — fade in "loves" last
+      if (hero && !reduce) {
+        hero.classList.add('is-hero-ready');
+        requestAnimationFrame(function () {
+          setTimeout(function () { hero.classList.add('is-hero-in'); }, 60);
+        });
+      }
+
+      // Stay form — graceful submit (intercept)
+      var stayForm = document.getElementById('stay-form');
+      if (stayForm) {
+        stayForm.addEventListener('submit', function (e) {
+          e.preventDefault();
+          var btn = stayForm.querySelector('button');
+          if (btn) btn.textContent = "Thanks. We'll be in touch.";
+        });
+      }
+
+      if (!root) return;
+      if (reduce) { root.classList.add('is-in'); return; }
+
+      function easeOutExpo(t) { return t === 1 ? 1 : 1 - Math.pow(2, -10 * t); }
+
+      function countUp(el) {
+        var target = parseFloat(el.getAttribute('data-count'));
+        var dec = parseInt(el.getAttribute('data-decimals') || '0', 10);
+        var dur = 1100;
+        var start = performance.now();
+        function frame(now) {
+          var p = Math.min((now - start) / dur, 1);
+          var v = target * easeOutExpo(p);
+          el.textContent = v.toFixed(dec);
+          if (p < 1) requestAnimationFrame(frame);
+          else el.textContent = target.toFixed(dec);
+        }
+        requestAnimationFrame(frame);
+      }
+
+      function play() {
+        root.classList.add('is-in');
+        var stats = root.querySelectorAll('.hero__stat');
+        stats.forEach(function (stat, i) {
+          var delay = 280 + i * 220;
+          setTimeout(function () {
+            stat.classList.add('is-num-in');
+            var num = stat.querySelector('.num');
+            if (num) countUp(num);
+            setTimeout(function () { stat.classList.add('is-unit-in'); }, 1150);
+            setTimeout(function () { stat.classList.add('is-cap-in'); }, 1320);
+          }, delay);
+        });
+        setTimeout(function () { root.classList.add('is-scroll-in'); }, 280 + stats.length * 220 + 1400);
+      }
+
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { play(); io.disconnect(); }
+        });
+      }, { threshold: 0.25 });
+      io.observe(root);
+    })();
+  </script>
+
 </BaseLayout>
