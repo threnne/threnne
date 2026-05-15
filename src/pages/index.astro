@@ -301,14 +301,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <div class="foot__col">
         <h4>Reach us</h4>
         <ul>
-          <li><a href="mailto:hello@threnne.com">hello@threnne.com</a></li>
-          <li><a href="mailto:press@threnne.com">press@threnne.com</a></li>
-        </ul>
-      </div>
-      <div class="foot__col">
-        <h4>Elsewhere</h4>
-        <ul>
-          <li><a href="#">Notes</a></li>
+          <li><a href="mailto:info@threnne.com">info@threnne.com</a></li>
           <li><a href="https://romancesignal.com">Romance Signal</a></li>
         </ul>
       </div>
@@ -333,13 +326,50 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         });
       }
 
-      // Stay form — graceful submit (intercept)
+      // Stay form — POST to Netlify Function -> Brevo
       var stayForm = document.getElementById('stay-form');
       if (stayForm) {
         stayForm.addEventListener('submit', function (e) {
           e.preventDefault();
+          var input = stayForm.querySelector('input[type="email"]');
           var btn = stayForm.querySelector('button');
-          if (btn) btn.textContent = "Thanks. We'll be in touch.";
+          var fine = stayForm.querySelector('.stay__form-fine');
+          if (!input || !btn) return;
+          var email = (input.value || '').trim();
+          if (!email) return;
+
+          var originalBtnHTML = btn.innerHTML;
+          btn.disabled = true;
+          input.disabled = true;
+          btn.textContent = 'Sending\u2026';
+
+          fetch('/.netlify/functions/subscribe', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email: email })
+          })
+          .then(function (res) {
+            return res.json().then(function (data) { return { status: res.status, data: data }; });
+          })
+          .then(function (r) {
+            if (r.status === 200 && r.data && r.data.ok) {
+              btn.textContent = "Thanks. We'll be in touch.";
+              if (fine) fine.textContent = 'You can leave the list anytime.';
+              input.value = '';
+              return;
+            }
+            var msg = (r.data && r.data.error) || 'Could not save your email right now. Please try again.';
+            btn.innerHTML = originalBtnHTML;
+            btn.disabled = false;
+            input.disabled = false;
+            if (fine) fine.textContent = msg;
+          })
+          .catch(function () {
+            btn.innerHTML = originalBtnHTML;
+            btn.disabled = false;
+            input.disabled = false;
+            if (fine) fine.textContent = 'Network error. Please try again.';
+          });
         });
       }
 

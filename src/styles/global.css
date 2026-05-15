@@ -821,7 +821,7 @@ input:focus-visible { outline: 2px solid var(--acid); outline-offset: 3px; borde
 .foot__inner {
   max-width: var(--max); margin: 0 auto;
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
+  grid-template-columns: 2fr 1fr 1fr;
   gap: clamp(24px, 4vw, 48px);
 }
 .foot__brand {
